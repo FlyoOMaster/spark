@@ -90,7 +90,7 @@ module.exports = {
                        case 11000:
                            var duplicate_key = err.message.match(reg)[0].substr(1);
                            var message = 'Пользователь с таким '+duplicate_key+' уже зарегистрирован';
-                           log.info(user.login +": "+ message);
+                           log.error(message);
                            next(new HttpError(422, message));
                            break;
                        default :
@@ -99,7 +99,7 @@ module.exports = {
                 }
                 if(err.name == 'ValidationError'){
                     for(var error in err.errors){
-                        log.info(user.login +": "+ err.errors[error].message);
+                        log.error(err.errors[error].message);
                         next(new HttpError(422, err.errors[error].message));
                     }
                 }
