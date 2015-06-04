@@ -106,8 +106,8 @@ UserSchema.pre('save', function(next){
                         return cb(error);
                     }
                 }
-                return cb();
             }
+            return cb();
         }
     ],function(err){
         return next(err)
