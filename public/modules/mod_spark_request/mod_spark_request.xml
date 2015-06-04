@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<extension type="module" version="3.0" client="site" method="upgrade">
+	<name>Spark Request</name>
+	<author>Eduard Chernov</author>
+	<version>1.1.0</version>
+	<files>
+		<folder>js</folder>
+		<folder>tmpl</folder>
+		<filename>ajax.php</filename>
+		<filename>helper.php</filename>
+		<filename>index.html</filename>
+		<filename module="mod_spark_request">mod_spark_request.php</filename>
+		<filename>mod_spark_request.xml</filename>
+	</files>
+	<config>
+		<fields name="params">
+			<fieldset name="basic">
+				<field
+					name="fromname"
+					type="text"
+					default=""
+					label="Имя отправителя" />
+				<field
+					name="frommail"
+					type="text"
+					default=""
+					label="Email отправителя" />
+				<field
+					name="recipient"
+					type="text"
+					default=""
+					label="Email получателя" />
+				<field
+					name="subject"
+					type="text"
+					default=""
+					label="Тема письма" />
+				
+				<field
+					name="name-label"
+					type="text"
+					default="Ваше имя"
+					label="Надпись в поле Имя" />
+				<field
+					name="phone-label"
+					type="text"
+					default="Номер телефона"
+					label="Надпись в поле Телефон" />
+				<field
+					name="address-label"
+					type="text"
+					default="Город, улица, дом"
+					label="Надпись в поле Адрес" />
+				<field
+					name="submit-label"
+					type="text"
+					default="Оставить заявку"
+					label="Надпись на кнопке отправки данных" />
+				
+				<field
+					name="success-message"
+					type="text"
+					default="Спасибо за обращение! Мы свяжемся с вами в самое ближайшее время!"
+					label="Текст сообщения при успешной отправки заявки" />
+				<field
+					name="error-message"
+					type="text"
+					default="Ошибка! Попробуйте ещё раз!"
+					label="Текст сообщения при неудачной отправки заявки" />
+				<field
+					name="phone-message"
+					type="text"
+					default="Введите Ваш номер телефона для связи с Вами!"
+					label="Текст сообщения при не введённом номере телефона" />
+			</fieldset>
+		</fields>
+	</config>
+</extension>

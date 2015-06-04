@@ -1,0 +1,368 @@
+* {
+	font-family: Arial, sans-serif, Helvetica;
+}
+
+html {
+	overflow-y: scroll;
+}
+
+.page {
+	width: 1000px;
+	margin: 0 auto;
+}
+
+.clear {
+	clear: both;
+	height: 0;
+	padding: 0;
+	margin: 0;
+}
+
+.header {
+	padding-bottom: 20px;
+}
+.header>span {
+	display: inline-block;
+	vertical-align: top;
+}
+.header_top-menu {
+	background-color: #cc0000;
+	height: 21px;
+	border: 1px solid #990000;
+}
+.header_top-menu-left-item {
+	float: left;
+	padding: 1px 15px 0;
+}
+.header_top-menu-left-item a {
+	color: #ffcc99;	font-size: 11px;
+	text-decoration: none;
+}
+.header_top-menu-right-item {
+	float: right;
+	height: 21px;
+	padding: 1px 15px 0;
+	border-left: 1px solid #990000;
+}
+.header_top-menu-right-item a {
+	color: white;
+	font-size: 14px;
+	font-weight: bold;
+	text-decoration: none;
+}
+.header_top-menu-right-item a:hover {
+	color: #ffffcc;
+}
+
+.logo {
+	width: 55%;
+	font-size: 0;
+}
+
+.phone {
+	font-size: 20px;
+	font-weight: bold;
+	color: black;
+	margin-top: 30px;
+}
+.phone span {
+	display: inline-block;
+	margin: 5px 0 0 5px;
+	vertical-align: top;
+}
+.phone p {
+	margin: 0;
+}
+.phone__label {
+	color: #666;
+}
+.phone__text {
+	font-size: 22px;
+}
+
+.key {
+	margin-top: 30px;
+	float: right;
+}
+.key a {
+	display: inline-block;
+	color: black;	
+	margin: 15px 0 0 5px;
+	text-decoration: none;
+	vertical-align: top;
+}
+
+.nav {
+	float: left;
+	width: 234px;
+	min-height: 425px;
+	padding-right: 16px;
+	background: url("../img/shadow_left.gif") right top no-repeat;
+}
+.nav_item {
+	margin-bottom: 15px;
+}
+.nav_text {
+	display: inline-block;
+	color: #666666;	font-size: 14px;
+	font-weight: bold;
+	margin-top: 20px;
+	vertical-align: top;
+}
+.nav_item a {
+	text-decoration: none;
+}
+.nav_item a .nav_active {
+	display: none;
+}
+.nav_item a .nav_inactive {
+	display: inline-block;
+}
+.nav_item a:hover .nav_active {
+	display: inline-block;
+}
+.nav_item a:hover .nav_inactive {
+	display: none;
+}
+.nav_item a:hover .nav_text {
+	color: #990000;
+}
+
+.content {
+	float: left;
+	width: 745px;
+	padding: 5px 0 0 5px;
+}
+.content h1 {
+	margin: 30px 0;
+	color: #990000;
+}
+.content h2, .content h3, .content h4 {
+	margin: 20px 0;
+	color: #cc0000;
+}
+.content h1 {
+	font-size: 28px;
+}
+.content h2 {
+	font-size: 38px;
+	font-weight: normal;
+}
+.content h3 {
+	font-size: 25px;
+}
+.content h4 {
+	color: #3e3e3e;
+	font-size: 18px;
+}
+.content h5 {
+	font-size: 18px;
+	font-weight: normal;
+}
+.content ul {
+	padding-left: 30px;
+}
+.content ul li {
+	list-style: none;
+	background: url('../img/bullit.png') left 6px no-repeat;
+	padding-left: 20px;
+	margin-bottom: 10px;
+}
+.content img {
+	margin-right: 20px;
+}
+
+.footer {
+	clear: both;
+}
+
+#userForm .componentheading {
+	font-size: 25px;
+	font-weight: bold;
+	margin-bottom: 10px;
+}
+#userForm .rsform-select-box {
+	width: 468px;
+}
+#userForm .rsform-input-box {
+	width: 460px;
+}
+#userForm .rsform-submit-button {
+	width: 200px;
+	height: 30px;
+}
+
+.rsform-block-addresstext, .rsform-block-contactstext, .rsform-block-correcttext, .rsform-block-pasporttext {
+	font-weight: bold;
+}
+.rsform-block-correcttext {
+	color: red;
+	font-size: 12px;
+}
+
+.ari-image-slider-wrapper {
+	margin: 0 !important;
+}
+
+.table-main p {
+	font-size: 15px;
+}
+.table-main strong {
+	font-size: 18px;
+}
+.table-main td {
+	vertical-align: top;
+}
+.table-main_left-column {
+	width: 45%;
+}
+.table-main_right-column {
+	width: 45%;
+}
+
+.spark-request {
+	background: #eee;
+	width: 212px;
+	border: 1px solid #ccc;
+	padding: 10px;
+	margin: 50px 0 0;
+	border-radius: 10px;
+	-moz-border-radius: 10px;
+	-webkit-border-radius: 10px;
+}
+.spark-request__label {
+	color: #666;
+	font-size: 20px;
+	width: 212px;
+	border-bottom: 1px solid #ccc;
+	padding: 0 0 10px;
+	margin: 0;
+}
+.spark-request__input {
+	font-size: 20px;
+	width: 208px;
+	height: 40px;
+	border: 2px inset #eee;
+	padding: 0;
+	margin: 20px 0 0;
+	outline: none;
+	border-radius: 5px;
+	-moz-border-radius: 5px;
+	-webkit-border-radius: 5px;
+}
+.spark-request__input-attention {
+	border: 2px solid #cc0000;
+}
+.spark-request__send-button {
+	color: #575757;
+	background-color: #ddd;
+	font-weight: bold;
+	border-style: outset;
+	cursor: pointer;
+}
+.spark-request__local-message {
+	display: none;
+	color: #e00;
+	margin: 20px 0 0;
+	text-align: center;
+}
+.spark-request__message-container {
+	display: none;
+	position: fixed;
+	left: 0;
+	top: 0;
+	width: 100%;
+	height: 100%;
+	z-index: 1000;
+}
+.spark-request__message {
+	display: table;
+	background: rgba(0, 0, 0, 0.5);
+	width: 300px;
+	height: 200px;
+	padding: 10px;
+	margin: 10% auto 0;
+	border-radius: 5px;
+	-moz-border-radius: 5px;
+	-webkit-border-radius: 5px;
+}
+.spark-request__text {
+	display: table-cell;
+	color: #fff;
+	font-size: 25px;
+	width: 100%;
+	height: 100%;
+	padding: 0;
+	margin: 0;
+	text-align: center;
+	vertical-align: middle;
+}
+
+.spark-check-address {
+	display: none;
+	position: fixed;
+	background: rgba(0, 0, 0, 0.8);
+	left: 0;
+	top: 0;
+	width: 100%;
+	height: 100%;
+	z-index: 1000;
+}
+.spark-check-address__link {
+	position: fixed;
+	background: #fff;
+	color: #ee0000;
+	font-size: 20px;
+	line-height: 50px;
+	width: 200px;
+	height: 50px;
+	right: -80px;
+	top: 40%;
+	border: 1px solid #ccc;
+	padding: 0;
+	margin: 0;
+	text-align: center;
+	vertical-align: middle;
+	cursor: pointer;
+	border-radius: 5px;
+	-moz-border-radius: 5px;
+	-webkit-border-radius: 5px;
+	-moz-transform: rotate(-90deg);
+	-webkit-transform: rotate(-90deg);
+	-o-transform: rotate(-90deg);
+}
+.spark-check-address__form {
+	background: #eee;
+	width: 300px;
+	height: 245px;
+	padding: 10px;
+	margin: 10% auto 0;
+	border-radius: 5px;
+	-moz-border-radius: 5px;
+	-webkit-border-radius: 5px;
+}
+.spark-check-address__select-block {
+	margin: 0 0 20px;
+}
+.spark-check-address__select {
+	width: 296px;
+}
+.spark-check-address__input {
+	font-size: 20px;
+	width: 296px;
+	height: 40px;
+	border: 2px inset #eee;
+	padding: 0;
+	outline: none;
+	border-radius: 5px;
+	-moz-border-radius: 5px;
+	-webkit-border-radius: 5px;
+}
+.spark-check-address__request, .spark-check-address__close {
+	color: #575757;
+	background-color: #ddd;
+	font-weight: bold;
+	border-style: outset;
+	margin: 0 0 20px;
+	cursor: pointer;
+}

@@ -1,0 +1,186 @@
+extends layout
+block title
+  title Способы оплаты
+block js
+  script(type="application/javascript").
+
+    jQuery(window).on('load',  function() {
+            new JCaption('img.caption');
+          });
+    jQuery(window).load(function() { var $ = window.jQueryNivoSlider || jQuery; var opts = {"pauseTime":2000,"keyboardNav":false,"pauseOnHover":false,"disableClick":true,"directionNav":false,"directionNavHide":false}; $("#ais_92").nivoSlider(opts); });
+  
+block content
+  .content
+    #ais_92_wrapper.ari-image-slider-wrapper.ari-is-theme-default.ari-image-slider-wCtrlNav
+      #ais_92.ari-image-slider.nivoSlider
+        img.imageslider-item(src='/img/slider-pay/0.jpg', alt='', title='', style='width: 678px; visibility: hidden; display: inline;')
+        img.imageslider-item(src='/img/slider-pay/1.jpg', alt='', title='', style='width: 678px; visibility: hidden; display: inline;')
+        img.imageslider-item(src='/img/slider-pay/2.jpg', alt='', title='', style='width: 678px; visibility: hidden; display: inline;')
+        img.imageslider-item(src='/img/slider-pay/3.jpg', alt='', title='', style='width: 678px; visibility: hidden; display: inline;')
+        img.imageslider-item(src='/img/slider-pay/4.jpg', alt='', title='', style='width: 678px; visibility: hidden; display: inline;')
+        img.imageslider-item(src='/img/slider-pay/5.jpg', alt='', title='', style='width: 678px; visibility: hidden; display: inline;')
+        //img.nivo-main-image(src='/img/slider-pay/1.jpg', style='display: inline; height: 198px;')
+        .nivo-caption
+        .nivo-box(name='0', rel='0', style='opacity: 1; left: 0px; top: 0px; width: 85px; height: 198px;')
+          img(src='/img/slider-pay/1.jpg', style='position:absolute; width:678px; height:auto; display:block; top:-0px; left:-0px;')
+        .nivo-box(name='1', rel='0', style='opacity: 1; left: 85px; top: 0px; width: 85px; height: 198px;')
+          img(src='/img/slider-pay/1.jpg', style='position:absolute; width:678px; height:auto; display:block; top:-0px; left:-85px;')
+        .nivo-box(name='2', rel='0', style='opacity: 1; left: 170px; top: 0px; width: 85px; height: 198px;')
+          img(src='/img/slider-pay/1.jpg', style='position:absolute; width:678px; height:auto; display:block; top:-0px; left:-170px;')
+        .nivo-box(name='3', rel='0', style='opacity: 1; left: 255px; top: 0px; width: 85px; height: 198px;')
+          img(src='/img/slider-pay/1.jpg', style='position:absolute; width:678px; height:auto; display:block; top:-0px; left:-255px;')
+        .nivo-box(name='4', rel='0', style='opacity: 1; left: 340px; top: 0px; width: 85px; height: 198px;')
+          img(src='/img/slider-pay/1.jpg', style='position:absolute; width:678px; height:auto; display:block; top:-0px; left:-340px;')
+        .nivo-box(name='5', rel='0', style='opacity: 1; left: 425px; top: 0px; width: 85px; height: 198px;')
+          img(src='/img/slider-pay/1.jpg', style='position:absolute; width:678px; height:auto; display:block; top:-0px; left:-425px;')
+        .nivo-box(name='6', rel='0', style='opacity: 1; left: 510px; top: 0px; width: 85px; height: 198px;')
+          img(src='/img/slider-pay/1.jpg', style='position:absolute; width:678px; height:auto; display:block; top:-0px; left:-510px;')
+        .nivo-box(name='7', rel='0', style='opacity: 1; left: 595px; top: 0px; width: 83px; height: 198px;')
+          img(src='/img/slider-pay/1.jpg', style='position:absolute; width:678px; height:auto; display:block; top:-0px; left:-595px;')
+        .nivo-box(name='0', rel='1', style='opacity: 1; left: 0px; top: 50px; width: 85px; height: 198px;')
+          img(src='/img/slider-pay/1.jpg', style='position:absolute; width:678px; height:auto; display:block; top:-50px; left:-0px;')
+        .nivo-box(name='1', rel='1', style='opacity: 1; left: 85px; top: 50px; width: 85px; height: 198px;')
+          img(src='/img/slider-pay/1.jpg', style='position:absolute; width:678px; height:auto; display:block; top:-50px; left:-85px;')
+        .nivo-box(name='2', rel='1', style='opacity: 1; left: 170px; top: 50px; width: 85px; height: 198px;')
+          img(src='/img/slider-pay/1.jpg', style='position:absolute; width:678px; height:auto; display:block; top:-50px; left:-170px;')
+        .nivo-box(name='3', rel='1', style='opacity: 1; left: 255px; top: 50px; width: 85px; height: 198px;')
+          img(src='/img/slider-pay/1.jpg', style='position:absolute; width:678px; height:auto; display:block; top:-50px; left:-255px;')
+        .nivo-box(name='4', rel='1', style='opacity: 1; left: 340px; top: 50px; width: 85px; height: 198px;')
+          img(src='/img/slider-pay/1.jpg', style='position:absolute; width:678px; height:auto; display:block; top:-50px; left:-340px;')
+        .nivo-box(name='5', rel='1', style='opacity: 1; left: 425px; top: 50px; width: 85px; height: 198px;')
+          img(src='/img/slider-pay/1.jpg', style='position:absolute; width:678px; height:auto; display:block; top:-50px; left:-425px;')
+        .nivo-box(name='6', rel='1', style='opacity: 1; left: 510px; top: 50px; width: 85px; height: 198px;')
+          img(src='/img/slider-pay/1.jpg', style='position:absolute; width:678px; height:auto; display:block; top:-50px; left:-510px;')
+        .nivo-box(name='7', rel='1', style='opacity: 1; left: 595px; top: 50px; width: 83px; height: 198px;')
+          img(src='/img/slider-pay/1.jpg', style='position:absolute; width:678px; height:auto; display:block; top:-50px; left:-595px;')
+        .nivo-box(name='0', rel='2', style='opacity: 1; left: 0px; top: 100px; width: 85px; height: 198px;')
+          img(src='/img/slider-pay/1.jpg', style='position:absolute; width:678px; height:auto; display:block; top:-100px; left:-0px;')
+        .nivo-box(name='1', rel='2', style='opacity: 1; left: 85px; top: 100px; width: 85px; height: 198px;')
+          img(src='/img/slider-pay/1.jpg', style='position:absolute; width:678px; height:auto; display:block; top:-100px; left:-85px;')
+        .nivo-box(name='2', rel='2', style='opacity: 1; left: 170px; top: 100px; width: 85px; height: 198px;')
+          img(src='/img/slider-pay/1.jpg', style='position:absolute; width:678px; height:auto; display:block; top:-100px; left:-170px;')
+        .nivo-box(name='3', rel='2', style='opacity: 1; left: 255px; top: 100px; width: 85px; height: 198px;')
+          img(src='/img/slider-pay/1.jpg', style='position:absolute; width:678px; height:auto; display:block; top:-100px; left:-255px;')
+        .nivo-box(name='4', rel='2', style='opacity: 1; left: 340px; top: 100px; width: 85px; height: 198px;')
+          img(src='/img/slider-pay/1.jpg', style='position:absolute; width:678px; height:auto; display:block; top:-100px; left:-340px;')
+        .nivo-box(name='5', rel='2', style='opacity: 1; left: 425px; top: 100px; width: 85px; height: 198px;')
+          img(src='/img/slider-pay/1.jpg', style='position:absolute; width:678px; height:auto; display:block; top:-100px; left:-425px;')
+        .nivo-box(name='6', rel='2', style='opacity: 1; left: 510px; top: 100px; width: 85px; height: 198px;')
+          img(src='/img/slider-pay/1.jpg', style='position:absolute; width:678px; height:auto; display:block; top:-100px; left:-510px;')
+        .nivo-box(name='7', rel='2', style='opacity: 1; left: 595px; top: 100px; width: 83px; height: 198px;')
+          img(src='/img/slider-pay/1.jpg', style='position:absolute; width:678px; height:auto; display:block; top:-100px; left:-595px;')
+        .nivo-box(name='0', rel='3', style='opacity: 1; left: 0px; top: 150px; width: 85px; height: 198px;')
+          img(src='/img/slider-pay/1.jpg', style='position:absolute; width:678px; height:auto; display:block; top:-150px; left:-0px;')
+        .nivo-box(name='1', rel='3', style='opacity: 1; left: 85px; top: 150px; width: 85px; height: 198px;')
+          img(src='/img/slider-pay/1.jpg', style='position:absolute; width:678px; height:auto; display:block; top:-150px; left:-85px;')
+        .nivo-box(name='2', rel='3', style='opacity: 1; left: 170px; top: 150px; width: 85px; height: 198px;')
+          img(src='/img/slider-pay/1.jpg', style='position:absolute; width:678px; height:auto; display:block; top:-150px; left:-170px;')
+        .nivo-box(name='3', rel='3', style='opacity: 1; left: 255px; top: 150px; width: 85px; height: 198px;')
+          img(src='/img/slider-pay/1.jpg', style='position:absolute; width:678px; height:auto; display:block; top:-150px; left:-255px;')
+        .nivo-box(name='4', rel='3', style='opacity: 1; left: 340px; top: 150px; width: 85px; height: 198px;')
+          img(src='/img/slider-pay/1.jpg', style='position:absolute; width:678px; height:auto; display:block; top:-150px; left:-340px;')
+        .nivo-box(name='5', rel='3', style='opacity: 1; left: 425px; top: 150px; width: 85px; height: 198px;')
+          img(src='/img/slider-pay/1.jpg', style='position:absolute; width:678px; height:auto; display:block; top:-150px; left:-425px;')
+        .nivo-box(name='6', rel='3', style='opacity: 1; left: 510px; top: 150px; width: 85px; height: 198px;')
+          img(src='/img/slider-pay/1.jpg', style='position:absolute; width:678px; height:auto; display:block; top:-150px; left:-510px;')
+        .nivo-box(name='7', rel='3', style='opacity: 1; left: 595px; top: 150px; width: 83px; height: 198px;')
+          img(src='/img/slider-pay/1.jpg', style='position:absolute; width:678px; height:auto; display:block; top:-150px; left:-595px;')
+      .nivo-controlNavHolder
+        .nivo-controlNav(style='visibility: visible;')
+          a.nivo-control(rel='0')
+            span.nivo-thumbNavWrapper(style='width:px;height:px')
+              | 0           
+              span.nivo-arrow-border
+              span.nivo-arrow
+          a.nivo-control.active(rel='1')
+            span.nivo-thumbNavWrapper(style='width:px;height:px')
+              | 1           
+              span.nivo-arrow-border
+              span.nivo-arrow
+          a.nivo-control(rel='2')
+            span.nivo-thumbNavWrapper(style='width:px;height:px')
+              | 2           
+              span.nivo-arrow-border
+              span.nivo-arrow
+          a.nivo-control(rel='3')
+            span.nivo-thumbNavWrapper(style='width:px;height:px')
+              | 3           
+              span.nivo-arrow-border
+              span.nivo-arrow
+          a.nivo-control(rel='4')
+            span.nivo-thumbNavWrapper(style='width:px;height:px')
+              | 4           
+              span.nivo-arrow-border
+              span.nivo-arrow
+          a.nivo-control(rel='5')
+            span.nivo-thumbNavWrapper(style='width:px;height:px')
+              | 5           
+              span.nivo-arrow-border
+              span.nivo-arrow
+    .item-page(itemscope='', itemtype='http://schema.org/Article')
+      meta(itemprop='inLanguage', content='en-GB')
+      div(itemprop='articleBody')
+        h1 Способы оплаты
+        h2 Терминалы по приёму платежей
+        p
+          img(src='/img/banners/terminals.png', alt='')
+        p
+          strong Преимущества для абонентов:
+        p
+          | Вы можете оплатить услуги интернет-провайдера ТТК в любое удобное время: терминалы по приему платежей работают круглосуточно, без выходных и праздничных дней.
+        p
+          strong Как оплатить услуги ТТК:
+        p Выберите меню «Оплата интернет» или «Интернет-провайдеры»
+        p Выберите в меню интернет-провайдер ТТК
+        p Введите номер своего лицевого счёта в 9-ти значном формате*
+        p Внесите необходимую сумму
+        p
+          | Возьмите чек и сохраняйте его до момента зачисления денежных средств на лицевой счёт.
+        p
+          | Обращаем ваше внимание на то что в платёжных терминалах может взиматься комиссия, размер комиссии устанавливается владельцем терминала.
+        p  
+        p
+          | *Для внесения оплаты на лицевые счета старого образца (до 01.06.2013) с 6-ю цифрами необходимо дополнительно ввести 3 цифры префикса города, далее - № договора; c 5-ю цифрами: 3 цифры префикса города, 0, далее - № договора.
+        p  
+        p
+          | Дополнительные трехзначные префиксы  для городов: Брянск 321, Волгодонск 616, Калуга 405, Краснодар 231, Обнинск 402, Ростов-на-Дону, Азов, Аксай и Батайск 615, Рязань 621, Таганрог 614, Тула 711.
+        p  
+        p
+          | Пример: Ростов-на-Дону 123456 (старый номер договора) => 615123456 (новый номер договора). Рязань 12345 (старый номер договора) => 621012345 (новый номер договора).
+        h2 Магазины дилеров
+        p
+          strong Оплатить услуги интернет-провайдера ТТК вы всегда можете у наших дилеров:
+        p
+          img(style='line-height: 1.3em;', src='/img/logo/logo_mts.gif', alt='')
+          img(src='/img/logo/logo_euroset.gif', alt='')
+          img(src='/img/logo/logo_svyaznoy.gif', alt='')
+        h2 Банкоматы
+        p
+          strong
+            | Оплатить услуги интернет-провайдера ТТК без комиссии, вы сможете в банкоматах следующих банков:
+        p
+          img(src='/img/logo/logo_sberbank.gif', alt='')
+          img(src='/img/logo/logo_centerinvest.gif', alt='')
+          img(src='/img/logo/logo_vtb24.gif', alt='')
+          img(src='/img/logo/logo_brs.gif', alt='')
+        p  
+        h2 Банковской картой
+        p
+          strong
+            | Оплатить услуги интернет-провайдера ТТК вы легко сможете с помощью вашей пластиковой карты 
+            a(href='https://stat.spark-com.ru/') через свой личный кабинет
+            span(style='line-height: 1.3em;') .
+        p
+          img(src='/img/logo/logo_cybp_viza_mc.gif', alt='')
+        h2 Интернет-Сервисы
+        p
+          | В настоящее время активно развиваются и активно пользуются спросом платёжные сервисы в интернете. Пользоваться ими очень удобно, ведь услуги интернет-провайдера ТТК можно оплатить, не выходя из дома или офиса. Появилось множество компаний, развивающих данные виды сервисов. На данный момент оплатить услуги интернет-провайдера ТТК вы можете через следующие платёжные интернет-сервисы:
+        p
+          img(src='/img/logo/logo_denmailru.gif', alt='')
+          img(src='/img/logo/logo_epos.gif', alt='')
+          img(src='/img/logo/logo_mobidengi.gif', alt='')
+          img(src='/img/logo/logo_qiwi.gif', alt='')
+          img(src='/img/logo/logo_tele2.gif', alt='')
+          img(src='/img/logo/logo_webmoney.gif', alt='')
+          img(src='/img/logo/logo_yandex.gif', alt='')
+  

@@ -1,0 +1,61 @@
+extends layout
+block title
+  title= Авторизация
+block css
+  link(rel='icon', href='/templates/default/css/img/sait/favicon.ico', type='ico')
+  link(rel='stylesheet', type='text/css', href='css/auth.css')
+
+block content
+  .content
+    #containerLogin.login-s(style='top: 100px; display: block;')
+      form(action='/auth', method='post')
+        .login-p
+          .float-left.padding-top-1
+            span.zagalovok1 Личный кабинет
+          .small-icons.float-right.kostul-1(align='right', style='background: url(img/login_icons.png) no-repeat;')
+          .claer
+          hr
+          .claer
+          div
+            div(align='right')
+              span.font-1.ie-form1 Логин:
+              input#login.margin-l-1(type='text', name='login', maxlength='50', autocomplete='off', value='')
+              img.find-icon(style='position: relative; top: -17px; left: 15px;' src='img/find.png', onclick='$("#login").val("");', title='Вычислить лицевой счет по текущему IP-адресу')
+            div(align='right')
+              span.font-1.ie-form1 Пароль:
+              input#pass.margin-l-2(type='password', name='password', autocomplete='off', maxlength='50')
+            div(align='right')
+              input.authBut(type='button', value='')
+          div(style='position:absolute;left: 47px; bottom: 43px;')
+            a(href='/registration') Регистрация
+        p.result asdads
+    #window-resizer-tooltip(style='display: none;')
+      a(href='#', title='Edit settings')
+      span.tooltipTitle Window size: 
+      span#winWidth.tooltipWidth 1400
+      |  x 
+      span#winHeight.tooltipHeight 1050
+      br
+      span.tooltipTitle Viewport size: 
+      span#vpWidth.tooltipWidth 789
+      |  x 
+      span#vpHeight.tooltipHeight 945
+  
+block js
+  script(type="application/javascript", src="media/jui/js/jquery-2.1.4.min.js")    
+  script(type='text/javascript').
+    $(document).ready(function(){
+      $('.authBut').click(function(){
+        $.post("/auth", {user:formToObject('form')}, function(data){
+            window.location.href = "/";
+          })
+        .fail(function(error){
+          var text = error.responseJSON.message;
+          var p = $('.result');
+          p.text(error.responseJSON.message).css('display','block');
+          })
+      })
+      
+    });
+  script(type='text/javascript').
+    

@@ -1,0 +1,130 @@
+extends ../layouts/cabinetLayout
+block title
+  title Личный кабинет 
+block content  
+  .content
+    h1 Личная информация
+    form(method="put")      
+      -var currentUser = (!foundUser)? user:foundUser;      
+        table.formTableLayout(border='0' data-login='#{currentUser.login}')
+          tbody
+            tr.rsform-block.rsform-block-surname
+              td Логин
+              td
+                input#login.rsform-input-box(type='text', value='#{currentUser.login}', size='60', name="login")
+              td          
+            tr.rsform-block.rsform-block-surname
+              td Фамилия
+              td
+                input#last_name.rsform-input-box(type='text', value='#{currentUser.last_name}', size='60', name='last_name')
+              td
+            tr.rsform-block.rsform-block-name
+              td Имя 
+              td
+                input#name.rsform-input-box(type='text', value='#{currentUser.name}', size='60', name='name')
+              td
+            tr.rsform-block.rsform-block-patronymic
+              td Отчество
+              td
+                input#Patronymic.rsform-input-box(type='text', value='#{currentUser.middle_name}', size='60', name='middle_name')
+              td
+            tr.rsform-block.rsform-block-borndate
+              td Дата рождения 
+              td
+                input#birthday.rsform-input-box(type='text', value='#{currentUser.birthday}', size='60', name='birthday')
+              td       
+            tr.rsform-block.rsform-block-phone
+              td Телефон
+              td
+                input#phone.rsform-input-box(type='text', value='#{currentUser.phone}', size='60', name='phone')
+              td
+      if !currentUser.type
+        h4 Поключения:
+        table#address(style='width:100%;')
+          if currentUser.address && currentUser.address.length > 0 
+            each address in currentUser.address
+              tr.rsform-block.rsform-block-phone
+                td Адрес: #{address.label}: 
+                td
+                  select#tarif(name='tarif', style='width:100%;')
+                    if tarifs
+                      each tarif, i in tarifs
+                          if address.tarif
+                            if address.tarif.name == tarif.name
+                              option(selected=(address.tarif.name == tarif.name), data-id='#{tarif._id}') #{address.tarif.label}
+                            else
+                              option(data-id='#{tarif._id}') #{tarif.label}
+                          else
+                            option(disabled) -
+                    
+                td 
+          else
+            tr.rsform-block.rsform-block-submit
+              td
+              td
+                p У вас нет подключений
+          tr.rsform-block.rsform-block-submit
+            td
+            td
+              p#status
+          
+            tr.rsform-block.rsform-block-submit
+              td 
+              td
+              td
+                input#submit.rsform-submit-button(type='submit', value='Обновить' style='float: right; margin-bottom: 50px;')
+                .formClr
+      else
+        if user.type == 'admin'
+          tr.rsform-block.rsform-block-submit
+                td
+                td
+                  p#status
+          tr.rsform-block.rsform-block-submit
+            td
+            td
+            td
+              input#submit.rsform-submit-button(type='submit', value='Обновить' style='float: right; margin-bottom: 50px;')
+              .formClr
+            
+block js
+  script(type="application/javascript", src="/js/cabinet.js")
+  
+  script.
+    setActive();
+    $('#submit').click(function(e){
+      e.preventDefault()
+      var obj = {user : formToObject('form')};
+      obj.user.address = [];
+      var selected = $('#address select option:selected');
+      $.each(selected, function(i, val){
+        obj.user.address.push({tarif:$(val).data('id')})
+      });
+      var status = $('#status');
+      $.ajax({
+        url: '/cabinet/private/#{currentUser.login}',
+        data: obj,
+        type: 'PUT',
+        success: function(result) {
+            console.log('success');
+            status.text('Данные обновлены успешно').css
+            ({
+              'display':'block',
+              'text-align':'center',
+              'color':'green'
+            });
+            fade(status);
+        },
+        error: function(err){
+          console.log("error");
+          console.log(err);
+          status.text("Ошибка при обновлении данных").css
+          ({
+            'display':'block',
+            'text-align':'center',
+            'color':'red'
+          });
+          fade(status);
+        }
+      });
+    });

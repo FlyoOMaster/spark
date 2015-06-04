@@ -1,0 +1,163 @@
+extends layout
+block js  
+    script(type="application/javascript", src="media/jui/js/jquery-noconflict.js")
+    script(type="application/javascript", src="media/jui/js/jquery-migrate.min.js")
+    script(type="application/javascript", src="media/system/js/caption.js")
+    script(type="application/javascript", src="modules/mod_ariimageslider/mod_ariimageslider/js/jquery.nivo.slider.js")
+    script(type="application/javascript").      
+      jQuery(window).on('load',  function() {
+              new JCaption('img.caption');
+            });
+      jQuery(window).load(function() { var $ = window.jQueryNivoSlider || jQuery; var opts = {"pauseTime":2000,"keyboardNav":false,"pauseOnHover":false,"disableClick":true,"directionNav":false,"directionNavHide":false}; $("#ais_89").nivoSlider(opts); });     
+block content
+  .content
+    #ais_89_wrapper.ari-image-slider-wrapper.ari-is-theme-default.ari-image-slider-wCtrlNav
+      #ais_89.ari-image-slider.nivoSlider
+        img.imageslider-item(src="/img/slider-main/1.jpg", alt="", title="", style="display: none; width: 680px;")
+        img.imageslider-item(src="/img/slider-main/2.jpg", alt="", title="", style="width: 680px; visibility: hidden; display: inline;")
+        img.imageslider-item(src="/img/slider-main/3.jpg", alt="", title="", style="width: 680px; visibility: hidden; display: inline;")
+        img.imageslider-item(src="/img/slider-main/4.jpg", alt="", title="", style="display: none; width: 680px;")
+        img.imageslider-item(src="/img/slider-main/5.jpg", alt="", title="", style="display: none; width: 680px;")
+        img.nivo-main-image(src="/img/slider-main/3.jpg", style="display: inline; width: 680px; height: 200px;")
+        .nivo-caption
+        .nivo-slice(name="0", style="left: 0px; width: 680px; height: 200px; opacity: 1; overflow: hidden;")
+          img(src="/img/slider-main/3.jpg", style="position:absolute; width:680px; height:auto; display:block !important; top:0; left:-0px;")
+        .nivo-slice(name="1", style="left: 45px; width: 45px; height: 200px; opacity: 0; overflow: hidden;")
+          img(src="/img/slider-main/3.jpg", style="position:absolute; width:680px; height:auto; display:block !important; top:0; left:-45px;")
+        .nivo-slice(name="2", style="left: 90px; width: 45px; height: 200px; opacity: 0; overflow: hidden;")
+          img(src="/img/slider-main/3.jpg", style="position:absolute; width:680px; height:auto; display:block !important; top:0; left:-90px;")
+        .nivo-slice(name="3", style="left: 135px; width: 45px; height: 200px; opacity: 0; overflow: hidden;")
+          img(src="/img/slider-main/3.jpg", style="position:absolute; width:680px; height:auto; display:block !important; top:0; left:-135px;")
+        .nivo-slice(name="4", style="left: 180px; width: 45px; height: 200px; opacity: 0; overflow: hidden;")
+          img(src="/img/slider-main/3.jpg", style="position:absolute; width:680px; height:auto; display:block !important; top:0; left:-180px;")
+        .nivo-slice(name="5", style="left: 225px; width: 45px; height: 200px; opacity: 0; overflow: hidden;")
+          img(src="/img/slider-main/3.jpg", style="position:absolute; width:680px; height:auto; display:block !important; top:0; left:-225px;")
+        .nivo-slice(name="6", style="left: 270px; width: 45px; height: 200px; opacity: 0; overflow: hidden;")
+          img(src="/img/slider-main/3.jpg", style="position:absolute; width:680px; height:auto; display:block !important; top:0; left:-270px;")
+        .nivo-slice(name="7", style="left: 315px; width: 45px; height: 200px; opacity: 0; overflow: hidden;")
+          img(src="/img/slider-main/3.jpg", style="position:absolute; width:680px; height:auto; display:block !important; top:0; left:-315px;")
+        .nivo-slice(name="8", style="left: 360px; width: 45px; height: 200px; opacity: 0; overflow: hidden;")
+          img(src="/img/slider-main/3.jpg", style="position:absolute; width:680px; height:auto; display:block !important; top:0; left:-360px;")
+        .nivo-slice(name="9", style="left: 405px; width: 45px; height: 200px; opacity: 0; overflow: hidden;")
+          img(src="/img/slider-main/3.jpg", style="position:absolute; width:680px; height:auto; display:block !important; top:0; left:-405px;")
+        .nivo-slice(name="10", style="left: 450px; width: 45px; height: 200px; opacity: 0; overflow: hidden;")
+          img(src="/img/slider-main/3.jpg", style="position:absolute; width:680px; height:auto; display:block !important; top:0; left:-450px;")
+        .nivo-slice(name="11", style="left: 495px; width: 45px; height: 200px; opacity: 0; overflow: hidden;")
+          img(src="/img/slider-main/3.jpg", style="position:absolute; width:680px; height:auto; display:block !important; top:0; left:-495px;")
+        .nivo-slice(name="12", style="left: 540px; width: 45px; height: 200px; opacity: 0; overflow: hidden;")
+          img(src="/img/slider-main/3.jpg", style="position:absolute; width:680px; height:auto; display:block !important; top:0; left:-540px;")
+        .nivo-slice(name="13", style="left: 585px; width: 45px; height: 200px; opacity: 0; overflow: hidden;")
+          img(src="/img/slider-main/3.jpg", style="position:absolute; width:680px; height:auto; display:block !important; top:0; left:-585px;")
+        .nivo-slice(name="14", style="left: 630px; width: 50px; height: 200px; opacity: 0; overflow: hidden;")
+          img(src="/img/slider-main/3.jpg", style="position:absolute; width:680px; height:auto; display:block !important; top:0; left:-630px;")
+      .nivo-controlNavHolder
+        .nivo-controlNav(style="visibility: visible;")
+          a.nivo-control(rel="0")
+            span.nivo-thumbNavWrapper(style="width:px;height:px")
+              | 0
+              span.nivo-arrow-border
+              span.nivo-arrow
+          a.nivo-control(rel="1")
+            span.nivo-thumbNavWrapper(style="width:px;height:px")
+              | 1
+              span.nivo-arrow-border
+              span.nivo-arrow
+          a.nivo-control.active(rel="2")
+            span.nivo-thumbNavWrapper(style="width:px;height:px")
+              | 2
+              span.nivo-arrow-border
+              span.nivo-arrow
+          a.nivo-control(rel="3")
+            span.nivo-thumbNavWrapper(style="width:px;height:px")
+              | 3
+              span.nivo-arrow-border
+              span.nivo-arrow
+          a.nivo-control(rel="4")
+            span.nivo-thumbNavWrapper(style="width:px;height:px")
+              | 4
+              span.nivo-arrow-border
+              span.nivo-arrow
+    .item-page(itemscope="", itemtype="http://schema.org/Article")
+      meta(itemprop="inLanguage", content="en-GB")
+      div(itemprop="articleBody")
+        h2(style="text-align: center;") Хотите качественный интернет?
+        h4(style="text-align: center;") Надоела маленькая скорость и постоянные сбои??
+        h2
+          img(style="float: right;", src="/img/banners/Mechtaj.gif", alt="")
+        h2
+          strong Мечтай!
+        h2 Качай!
+        h3 Летай!
+        p 
+        h4(style="font-size: 35px; margin-bottom: 0;") от 280
+        h3(style="font-size: 30px; margin-top: 0;") руб/мес
+        h4(style="font-size: 45px; margin-bottom: 0;") от100
+        h3(style="font-size: 30px; margin-top: 0;") руб/мес
+        p &#160;
+        h4(style="font-size: 28px;") Есть решение! Спарк ТТК уже в вашем доме!
+        p &#160;
+        p
+          iframe(src="https://www.youtube.com/embed/bLKkFVWAL9c?feature=player_detailpage", width="640", height="360", frameborder="0", allowfullscreen="")
+        p &#160;
+        h2(style="text-align: center;") 6 причин подключить Спарк ТТК
+        table.table-main
+          tbody
+            tr
+              td.table-main_left-column
+                p
+                  strong
+                    img(src="/img/banners/ok.png", alt="")
+                    | Быстрое подключение
+                p
+                  | Ваша заявка попадёт непосредственно к специалисту, который подключит Вас в течение суток
+              td.table-main_right-column
+                p
+                  strong
+                    img(src="/img/banners/ok.png", alt="")
+                    | Качественный интернет
+                p
+                  | Ваш интернет будет самым быстрым, качественным и стабильным! Без разрывов соединения.
+            tr
+              td
+                p
+                  strong
+                    img(src="/img/banners/ok.png", alt="")
+                    span(style="line-height: 1.3em;") Мегасайты на мегаскорости
+                p
+                  | Доступ на максимальной скорости 100 мбит/с на самых популярных интернет ресурсах! Таких, как Одноклассники, facebook, Живой журнал, Окно.ру, Ivi.ru и многие другие.
+              td
+                p
+                  strong
+                    img(src="/img/banners/ok.png", alt="")
+                    | Собственный медиа портал
+                p
+                  | Медиа портал объёмом более 100 терабайт. Загружайте Ваши любимые фильмы, программы, игры со скоростью 100 мбит/с на любом тарифном плане!
+            tr
+              td
+                p
+                  strong
+                    img(src="/img/banners/ok.png", alt="")
+                    |Бесплатный WI-FI
+                p
+                  | При подключении на наибольший по стоимости тарифный план основной линейки компания дарит вам Wi-FI роутер.
+              td
+                p
+                  span(style="line-height: 1.3em;")
+                    img(style="line-height: 1.3em;", src="/img/banners/ok.png", alt="")
+                    strong Круглосуточная техподдержка
+                p Наши специалисты всегда будут рады помочь 24 часа в сутки.
+        div
+          div(style="background-color: #e21a1a; height: 77px; padding-left: 30px;")
+            .nav_item(style="float: right; margin-top: -2px;")
+              a(href="/index.php/feedback")
+                img.nav_active(src="/img/plugreda_new.png", alt="")
+                img.nav_inactive(src="/img/plugred_new.png", alt="")
+            h5(style="margin: 0; padding: 10px 0 0 0; color: white; font-size: 25px; text-align: center;") Порадуйте себя!
+
+            h5(style="margin: 0; padding: 8px 0 0 30px; color: white; font-size: 20px;") Оставьте заявку прямо сейчас, нажав на кнопку
+          div(style="background: url('http://www.spark-com.ru/img/bg_gr.gif') 0 0 repeat-x; height: 270px;")
+            div(style="margin-left: 250px; width: 400px; height: 270px;")
+              h5(style="margin: 0; padding-top: 30px; font-size: 20px;") Или позвонив по телефону
+              h5(style="margin: 0; padding-top: 30px; font-size: 30px;")
+                img(src="img/phone.gif", alt="")
+                span(style="color: #e21a1a;") 8 (952) 600-12-09

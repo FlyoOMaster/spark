@@ -1,0 +1,79 @@
+extends ../../layouts/cabinetLayout
+block title
+  title Заявки
+block css
+  link(rel="stylesheet", type="text/css", href="/css/requests.css")
+
+block content  
+  .content
+    h1 Оставить заявку на подключение
+    form(method="post")
+      table.formTableLayout(border='0')
+        tbody       
+          tr.rsform-block.rsform-block-borndate
+            td Адреc
+            td
+              input#address.rsform-input-box(type='text', value='', size='60', name='address')
+            td 
+          tr.rsform-block.rsform-block-phone
+            td Тариф
+            td
+              select#tarif(name='tarif')
+                if tarifs
+                  if tarifs.length == 0
+                    option(selected) На данный момент все тарифы не авктивны
+                  each tarif in tarifs
+                    option(data-id="#{tarif._id}") #{tarif.label}
+                else
+                  option(selected) Ошибка закгрузки тарифов
+            td
+         tr.rsform-block.rsform-block-submit
+            td
+            td
+              p#status(style='text-align:center; display:none;') Статус
+         tr.rsform-block.rsform-block-submit
+            td
+            td
+              input#submit.rsform-submit-button(type='submit', value='Добавить' style='float: right; margin-bottom: 50px;')
+              .formClr
+            td        
+block js
+  script(type="application/javascript", src="/js/cabinet.js")
+  script.
+    setActive();
+    $('#submit').click(function(e){
+      e.preventDefault()
+      var obj = formToObject('form');
+      var status = $('#status'),
+          tarif = $('#tarif option:selected');
+
+      var package = {request:formToObject('form')};
+      package.request.tarif = tarif.data('id');
+      $.ajax({
+        url: '/cabinet/requests/new',
+        data: package,
+        type: 'POST',
+        success: function(result) {
+            console.log('success');
+            status.text('Данные обновлены успешно').css
+            ({
+              'display':'block',
+              'text-align':'center',
+              'color':'green'
+            });
+            fade(status);
+        },
+        error: function(err){
+          err = err.responseJSON;
+          console.log("error");
+          status.text(err.message || "Ошибка при обновлении данных").css
+          ({
+            'display':'block',
+            'text-align':'center',
+            'color':'red'
+          });
+          fade(status);
+        }
+      });
+      
+    })

@@ -1,0 +1,80 @@
+extends ../../layouts/cabinetLayout
+block content
+  .content
+    if tarif
+      h1 Тариф "#{tarif.label}"
+      form(method="PUT")
+        table.formTableLayout(border='0')
+            tbody
+              tr.rsform-block.rsform-block-surname
+                td Имя
+                td
+                  input#name.rsform-input-box(type='text', value='#{tarif.name}', size='60', name="name")
+                td          
+              tr.rsform-block.rsform-block-surname
+                td Заголовок
+                td
+                  input#label.rsform-input-box(type='text', value='#{tarif.label}', size='60', name="label")
+                td
+              tr.rsform-block.rsform-block-name
+                td Скорость 
+                td
+                  input#speed.rsform-input-box(type='text', value='#{tarif.speed}', size='60', name="speed")
+                td
+              tr.rsform-block.rsform-block-patronymic
+                td Цена
+                td
+                  input#price.rsform-input-box(type='text', value='#{tarif.price}', size='60', name="price")
+                td
+              tr.rsform-block.rsform-block-borndate
+                td Статус
+                td
+                  input#isActive.rsform-input-box(type='checkbox', checked=(tarif.isActive===true ? "checked" : undefined), size='60', name="isActive" style="float:right;")
+                td            
+             tr.rsform-block.rsform-block-submit
+                td
+                td
+                  p#status(style='text-align:center; display:none;') Статус
+             tr.rsform-block.rsform-block-submit
+                td
+                td
+                  input#submit.rsform-submit-button(type='submit', value='Обновить' style='float: right; margin-bottom: 50px;')
+                  .formClr
+                td
+    else
+      h1 Тариф не найден
+block js
+  script.
+    $('#submit').click(function(e){
+      e.preventDefault();
+      var sendingObj = { tarif:formToObject('form') };
+      sendingObj.tarif.isActive = sendingObj.tarif.isActive == 'on' ? true : false;      
+      var status = $('#status');
+
+      $.ajax({
+        url: '/cabinet/tarifs/#{tarif._id}',
+        data: sendingObj,
+        type: 'PUT',
+        success: function(result) {
+            console.log('success');
+            status.text('Данные обновлены успешно').css
+            ({
+              'display':'block',
+              'text-align':'center',
+              'color':'green'
+            });
+            fade(status);
+        },
+        error: function(err){
+          err = err.responseJSON;
+          console.log("error");
+          status.text(err.message || "Ошибка при обновлении данных").css
+          ({
+            'display':'block',
+            'text-align':'center',
+            'color':'red'
+          });
+          fade(status);
+        }
+      });
+    });

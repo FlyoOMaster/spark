@@ -1,0 +1,14 @@
+#request-table{
+	width: 100%;
+	  
+	  border-collapse: collapse;
+	  border-spacing: 4px 0;
+}
+.request-table-item{
+	padding-left: 5px;
+	border: 1px solid;
+}
+.request-table-item-center{
+	text-align: center;
+	border: 1px solid;
+}

@@ -1,0 +1,90 @@
+extends layout
+block js
+block title
+  title Новости
+block content
+  .content
+    .item-page(itemscope='', itemtype='http://schema.org/Article')
+      meta(itemprop='inLanguage', content='en-GB')
+      div(itemprop='articleBody')
+        h1 Новости
+        h2 Запусти скоростной интернет от 280 рублей
+        p
+          img(style='float: left;', src='/img/news/3.jpg', alt='', width='270', height='200')
+          | Пришло время пробовать новые увлечения, испытывать свежие эмоции, строить невероятные планы. Откройте новые возможности сети Интернет: ведь теперь максимальные скорости стали еще доступнее!
+        p
+          | С 1 апреля подключайтесь к ТТК по тарифным планам от 280 рублей! При подключении на наибольший по скорости тарифный план основной линейки - wi-fi роутер в подарок!
+        p
+          | Срок промо-тарифов 3 месяца с момента подключения. По истечении промо-периода, абонент автоматически переводится на соответствующий по скорости тарифный план основной линейки. Скидка на второй и третий месяцы, начиная с даты заключения договора, предоставляется в случае своевременного внесения абонентской платы за услугу. Период действия акции - с 1 апреля по 31 мая 2015 года.
+        p
+          | Играйте и побеждайте, ищите и находите новые идеи, общайтесь с друзьями, качайте гигабайты музыки! И все это - по выгодным ценам, на стремительных скоростях и с гарантированной стабильностью соединения!
+        p ТТК. Запусти скоростной интернет!
+        p  
+        h2 В Новый год - на новой скорости!
+        p
+          img(style="color: #000000; font-family: 'Times New Roman'; font-size: medium; line-height: normal;", src='/img/news/2.jpg', alt='')
+        p
+          | Новый год - сказочный и всеми любимый праздник. Для всех, кто в канун Нового года ждет исполнения желаний, волшебства и подарков, Компания ТТК разработала специальное предложение.
+        p
+          | Специально для новых абонентов мы дарим новогодние промо-тарифы - на высоких скоростях по выгодным ценам:
+        ul
+          li Новогодний Мечтай: 400 р - 50 Мбит/с
+          li Новогодний Летай: 550 р - 100 Мбит/с
+        p
+          | Срок подключения на новогодние промо-тарифы: с 5 декабря 2014 г. по 31 января 2015 г. Срок действия тарифов- 3 месяца с момента подключения. По истечении промо-периода, абонент автоматически переводится на аналогичный по цене тарифный план основной линейки.
+        p
+          | Подключайте высокие скорости по выгодной цене! Для общения в сети и искренних поздравлений родных и близких. Для удачных заказов подарков в интернет-магазинах. Для волшебных праздничных дней, проведенных в кругу семьи за просмотром любимых фильмов в on-line.
+        p
+          | В Новый год - с новыми мечтами и целями! В Новый год - на новой скорости, вместе с ТТК!
+        p  
+        h2 Транстелеком стал единой компанией, завершив реорганизацию
+        p
+          img(style='font-size: 12.1599998474121px; line-height: 15.8079996109009px;', src='/img/news/1.jpg', alt='')
+        p Уважаемые абоненты!
+        p
+          | Сообщаем вам о завершении процесса преобразования ТТК в единую компанию с филиальной структурой.
+        p
+          | 5 ноября 2014 года ЗАО «Электро-ком» присоединено к ЗАО «Компания ТрансТелеКом» и продолжает осуществлять свою деятельность в формате филиала ЗАО «Компания ТрансТелеКом» «Макрорегион СПАРК». В связи с этим просим Вас считать стороной в заключенном с вами абонентском договоре ЗАО «Компания ТрансТелеКом» (в лице Филиала ЗАО «Компания ТрансТелеКом» «Макрорегион СПАРК» как правопреемника ЗАО «Электро-ком» по всем правам и обязанностям.
+        p
+          | Условия предоставления услуг, график работы офисов продаж и обслуживания, а также все контактные данные сохраняются без изменений.
+    .spark-check-address__link Проверить адрес
+    .spark-check-address
+      .spark-check-address__form
+        .spark-check-address__select-block
+          select.spark-check-address__select.spark-check-address__city(tabindex='-1', style='display: none;')
+            option
+            option Таганрог
+            option Ростов-на-Дону
+            option Волгодонск
+            option Цимлянск
+            option Батайск
+          span.select2.select2-container.select2-container--default(dir='ltr', style='width: 296px;')
+            span.selection
+              span.select2-selection.select2-selection--single(role='combobox', aria-autocomplete='list', aria-haspopup='true', aria-expanded='false', tabindex='0', aria-labelledby='select2-xyrd-container')
+                span#select2-xyrd-container.select2-selection__rendered
+                  span.select2-selection__placeholder Город
+                span.select2-selection__arrow(role='presentation')
+                  b(role='presentation')
+            span.dropdown-wrapper(aria-hidden='true')
+        .spark-check-address__select-block
+          select.spark-check-address__select.spark-check-address__street(tabindex='-1', style='display: none;')
+          span.select2.select2-container.select2-container--default(dir='ltr', style='width: 296px;')
+            span.selection
+              span.select2-selection.select2-selection--single(role='combobox', aria-autocomplete='list', aria-haspopup='true', aria-expanded='false', tabindex='0', aria-labelledby='select2-pvwm-container')
+                span#select2-pvwm-container.select2-selection__rendered
+                  span.select2-selection__placeholder Улица
+                span.select2-selection__arrow(role='presentation')
+                  b(role='presentation')
+            span.dropdown-wrapper(aria-hidden='true')
+        .spark-check-address__select-block
+          select.spark-check-address__select.spark-check-address__house(tabindex='-1', style='display: none;')
+          span.select2.select2-container.select2-container--default(dir='ltr', style='width: 296px;')
+            span.selection
+              span.select2-selection.select2-selection--single(role='combobox', aria-autocomplete='list', aria-haspopup='true', aria-expanded='false', tabindex='0', aria-labelledby='select2-ewnx-container')
+                span#select2-ewnx-container.select2-selection__rendered
+                  span.select2-selection__placeholder Дом
+                span.select2-selection__arrow(role='presentation')
+                  b(role='presentation')
+            span.dropdown-wrapper(aria-hidden='true')
+        input.spark-check-address__input.spark-check-address__request(type='button', value='Оставить заявку')
+        input.spark-check-address__input.spark-check-address__close(type='button', value='Закрыть')

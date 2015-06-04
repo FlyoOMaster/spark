@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<extension type="module" version="3.0" client="site" method="upgrade">
+	<name>Spark Check Address</name>
+	<author>Eduard Chernov</author>
+	<version>1.0.0</version>
+	<files>
+		<folder>css</folder>
+		<folder>js</folder>
+		<folder>tmpl</folder>
+		<filename>ajax.php</filename>
+		<filename>base.json</filename>
+		<filename>helper.php</filename>
+		<filename>index.html</filename>
+		<filename module="mod_spark_check_address">mod_spark_check_address.php</filename>
+		<filename>mod_spark_check_address.xml</filename>
+	</files>
+</extension>

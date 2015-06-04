@@ -1,0 +1,159 @@
+extends layout
+block title
+  title= Регистрация
+block css
+
+block content
+  .content
+    .custom
+      p(style='font-size: 25px; font-weight: bold;') Оставить заявку на подключение
+      p
+        img(src='/img/banners/package-podkl.jpg', alt='')
+      table
+        tbody
+          tr
+            td(style='width: 270px; vertical-align: top;')
+              span(style="color: #000000; font-family: Verdana, 'Geneva CY', 'DejaVu Sans', sans-serif; font-size: 12px; font-style: italic; line-height: 14px;") Вы оставляете заявку на сайте.
+            td(style='width: 245px; vertical-align: top; padding-right: 15px;')
+              span(style="color: #000000; font-family: Verdana, 'Geneva CY', 'DejaVu Sans', sans-serif; font-size: 12px; font-style: italic; line-height: 14px;")
+                | В ближайшее время с Вами свяжется специалист. Он ответит на все ваши вопросы и назначит удобное для Вас время для подключения.
+            td(style='width: 200px; vertical-align: top;')
+              span(style="color: #000000; font-family: Verdana, 'Geneva CY', 'DejaVu Sans', sans-serif; font-size: 12px; font-style: italic; line-height: 14px;") Техник проведет кабель, настроит оборудование и заключит договор.
+      p  
+    form#userForm(method='post')
+      table.formTableLayout(border='0')
+        tbody
+          tr.rsform-block.rsform-block-contactstext
+            td
+            td
+              | Личные данные
+              .formClr
+            td
+          tr.rsform-block.rsform-block-surname
+            td Логин (*)
+            td
+              .formClr
+              span#component24.formNoError Укажите Ваш логин
+              br
+              input#Surname.rsform-input-box(type='text', value='', size='60', name="login")
+            td
+          tr.rsform-block.rsform-block-surname
+            td Пароль (*)
+            td
+              .formClr
+              span#component24.formNoError Укажите Ваш пароль
+              br
+              input#Surname.rsform-input-box(type='text', value='', size='60', name='password')
+            td
+          tr.rsform-block.rsform-block-surname
+            td Фамилия (*)
+            td
+              .formClr
+              span#component24.formNoError Укажите Вашу фамилию
+              br
+              input#Surname.rsform-input-box(type='text', value='', size='60', name='last_name')
+            td
+          tr.rsform-block.rsform-block-name
+            td Имя (*)
+            td
+              .formClr
+              span#component25.formNoError Укажите Ваше имя
+              br
+              input#Name.rsform-input-box(type='text', value='', size='60', name='name')
+            td
+          tr.rsform-block.rsform-block-patronymic
+            td Отчество (*)
+            td
+              .formClr
+              span#component26.formNoError Укажите Ваше отчество
+              br
+              input#Patronymic.rsform-input-box(type='text', value='', size='60', name='middle_name')
+            td
+          tr.rsform-block.rsform-block-borndate
+            td Дата рождения (дд.мм.гггг *)
+            td
+              .formClr
+              span#component27.formNoError Укажите Вашу дату рождения
+              br
+              input#BornDate.rsform-input-box(type='text', value='', size='60', name='birthday')
+            td
+          tr.rsform-block.rsform-block-borndate
+            td Адрес(*)
+            td
+              .formClr
+              span#component27.formNoError Укажите Ваш адрес проживания
+              br
+              input#BornDate.rsform-input-box(type='text', value='', size='60', name='address')
+            td
+          tr.rsform-block.rsform-block-contactstext
+            td
+            td
+              | Контакты
+              .formClr
+            td
+          tr.rsform-block.rsform-block-correcttext
+            td
+            td
+              | Проверьте правильность введённого номера, чтобы мы могли с Вами связаться!
+              .formClr
+            td
+          tr.rsform-block.rsform-block-phone
+            td Телефон (*)
+            td
+              input#Phone.rsform-input-box(type='text', value='', size='60', name='phone')
+              .formClr
+              span#component31.formNoError Нужен для связи с Вами
+            td
+          tr.rsform-block.rsform-block-reqtext
+            td
+            td
+              | Поля, отмеченные (*) обязательны для заполнения
+              .formClr
+            td
+          tr
+            td
+            td
+              .custom
+                p  
+                h3
+                  img(style='float: left; width: 160px;  margin-left: -77px;', src='/img/banners/flats.jpg', alt='')
+                h3(style='font-size: 30px;') Уважаемый абонент!
+                p  
+                p
+                  strong
+                    | Подключение оптоволоконного интернета от нашей компании осуществляется только в многоквартирных домах города.
+                p(style='color: red; font-weight: bold;') Приятного пользования!
+           tr.rsform-block.rsform-block-submit
+            td
+            td
+              input#submit.rsform-submit-button(type='submit', value='Подключиться' style='margin-top: 50px;float: right; margin-bottom: 50px;')
+              .formClr
+            td
+          //
+            tr
+              td
+              td
+                input(type='hidden', name='form[formId]', value='4')
+
+    
+block js 
+  script.
+    $('#submit').click(function(e){
+        e.preventDefault()
+        var obj = {user : formToObject('form')};
+        obj.user.address = [{label:obj.user.address}];
+        var status = $('#status');
+        $.ajax({
+          url: '/registration',
+          data: obj,
+          type: 'POST',
+          success: function(href) {
+              window.location.href = href;
+          },
+          error: function(err){
+            console.log("error");
+            console.log(err);
+            alert('Ошибка во время выполенияния регистрации пользователя: '+err.responseJSON.message);
+          }
+        });
+      });

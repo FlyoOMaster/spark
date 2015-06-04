@@ -1,0 +1,76 @@
+extends ../../layouts/cabinetLayout
+block title
+  title Тариф 
+block content  
+  .content
+    h1 Создание нового тарифа
+    form(method="put")     
+        table.formTableLayout(border='0' data-login='#{user.login}')
+          tbody
+            tr.rsform-block.rsform-block-surname
+              td Имя
+              td
+                input#name.rsform-input-box(placeholder='Введите имя', type='text', value='', size='60', name="name")
+              td          
+            tr.rsform-block.rsform-block-surname
+              td Заголовок
+              td
+                input#label.rsform-input-box(placeholder='Введите заголовок',type='text', value='', size='60', name='label')
+              td
+            tr.rsform-block.rsform-block-name
+              td Скорость 
+              td
+                input#speed.rsform-input-box(placeholder='Введите скорость',type='text', value='', size='60', name='speed')
+              td
+            tr.rsform-block.rsform-block-patronymic
+              td Цена
+              td
+                input#price.rsform-input-box(placeholder='Введите цену',type='text', value='', size='60', name='price')
+              td 
+            tr.rsform-block.rsform-block-submit
+              td
+              td
+                p#status
+              td           
+           tr.rsform-block.rsform-block-submit
+              td
+              td
+                input#submit.rsform-submit-button(type='submit', value='Добавить' style='float: right; margin-bottom: 50px;')
+                .formClr
+              td
+block js
+  script(type="application/javascript", src="/js/cabinet.js")
+  
+  script.
+    setActive();
+    $('#submit').click(function(e){
+      e.preventDefault()
+      var obj = {tarif : formToObject('form')};
+      var status = $('#status');
+      $.ajax({
+        url: '/cabinet/tarifs/new',
+        data: obj,
+        type: 'POST',
+        success: function(result) {
+            console.log('success');
+            status.text('Тариф добавлен успешно').css
+            ({
+              'display':'block',
+              'text-align':'center',
+              'color':'green'
+            });
+            fade(status);
+        },
+        error: function(err){
+          err = err.responseJSON;
+          console.log("error");
+          status.text(err.message || "Ошибка при обновлении данных").css
+          ({
+            'display':'block',
+            'text-align':'center',
+            'color':'red'
+          });
+          fade(status,3000);
+        }
+      });
+    });

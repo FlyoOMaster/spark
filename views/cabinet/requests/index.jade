@@ -1,0 +1,112 @@
+extends ../../layouts/cabinetLayout
+block title
+  title Заявки
+block css
+  link(rel="stylesheet", type="text/css", href="/css/requests.css")
+
+block content  
+  .content
+    -var header = (user.type != 'admin')?'Оставить заявку на подключение':'Заявки пользователей'
+    h1=header
+    table#request-table.formTableLayout(border='0', cellpadding=10)
+      if user.type != 'admin'
+        tr
+          th.request-table-item-center №
+          th.request-table-item Дата
+          th.request-table-item Адрес
+          th.request-table-item Тариф
+          th.request-table-item Статус
+        if requests
+          if requests.length == 0
+            tr
+              td.request-table-item-center(colspan=5) Вы не оставляли еще ниодной заявки
+          else        
+            each request, i in requests
+              -var iterator = i + 1;
+              tr
+                td.request-table-item-center #{iterator}
+                td.request-table-item #{request.date}
+                td.request-table-item #{request.address}
+                td.request-table-item #{request.tarif.label}
+                td.request-table-item #{request.status}
+        else
+          tr
+            td.request-table-item-center(colspan=5) Ошибка загрузки данных
+      else
+        tr
+          th.request-table-item-center №
+          th.request-table-item Пользователь
+          th.request-table-item Дата
+          th.request-table-item Адрес
+          th.request-table-item Тариф
+          th.request-table-item Статус
+        if requests
+          if requests.length == 0
+            tr
+              td.request-table-item-center(colspan=6) Вы не оставляли еще ниодной заявки
+          else        
+            each request, i in requests
+              -var iterator = i + 1;
+              -var isAdmin = request.user._id.equals(user._id);
+              tr(data-id='lala')
+                td.request-table-item-center #{iterator}
+                td.request-table-item 
+                  -var user_name =  (request.user.name.length > 0) ? request.user.name +" "+ request.user.last_name: request.user.login
+                  a(href='/cabinet/private/#{request.user.login}') #{user_name}
+                td.request-table-item #{request.date}
+                td.request-table-item #{request.address}
+                td.request-table-item 
+                  a(href='/cabinet/tarifs/#{request.tarif._id}') #{request.tarif.label}
+                td.request-table-item #{request.status}
+                if request.status != 'Complete'
+                  td
+                    button.btnClose(style='margin: 5px;' data-user='#{request.user._id}' data-request='#{request._id}') Закрыть заявку
+        else
+          tr
+            td.request-table-item-center(colspan=5) Ошибка загрузки данных
+        tr
+          td(colspan=5)
+            p#status
+    if user.type != 'admin'
+      span
+        a(href="/cabinet/requests/new" style="float:right;") Оставить новую заявку         
+block js
+  script(type="application/javascript", src="/js/cabinet.js")
+  script.
+    $('.btnClose').click(function(){
+      var clicked = $(this),
+          status = $('#status');
+      var pack = {
+        request_id: $(this).data('request'),
+        user_id : $(this).data('user'),
+      } 
+      $.ajax({
+        url: '/cabinet/requests',
+        data: pack,
+        type: 'PUT',
+        success: function(result) {
+          console.log('success');
+          status.text('Данные обновлены успешно').css
+          ({
+            'display':'block',
+            'text-align':'center',
+            'color':'green'
+          });
+          fade(status)
+          setTimeout(function(){
+            location.reload();
+          },1000)
+        },
+        error: function(err){
+          err = err.responseJSON;
+          console.log("error");
+          status.text(err.message || "Ошибка при обновлении данных").css
+          ({
+            'display':'block',
+            'text-align':'center',
+            'color':'red'
+          });
+          fade(status);
+        }
+      });
+    });

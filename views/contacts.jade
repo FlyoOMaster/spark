@@ -1,0 +1,21 @@
+extends layout
+block js
+block title
+  title Контакты
+block content
+  .content
+    .item-page(itemscope='', itemtype='http://schema.org/Article')
+    meta(itemprop='inLanguage', content='en-GB')
+    div(itemprop='articleBody')
+      h1
+        img(src='/img/banners/680x200_terminal21.jpg', alt='')
+      h1 Контактная информация
+      p
+        | Вы всегда можете оставить заявку и задать интересующие вопросы по подключению по телефону:
+      p(style='text-align:center;')
+        strong 8 (952) 600 12 09
+        | .
+      p Также оставить заявку на подключение интернета можно, нажав на кнопку:
+      div(style='margin-left:38%;')
+        a(href='/cabinet/requests/new')
+          img(src='/img/banners/plugreda.gif', alt='')

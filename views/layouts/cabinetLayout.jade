@@ -1,0 +1,25 @@
+extends ../layout
+block navbar
+  .nav_item
+    a(href="/cabinet/private/#{user.login}")
+      img.nav_active.private-img(src="/img/usera.png")
+      img.nav_inactive.private-img(src="/img/user.png")
+      span.nav_text Личная информация
+
+  if user.type == 'admin'
+    .nav_item
+      a(href="/cabinet/requests")
+        img.nav_active.private-img.private-img(src="/img/requestsa.png")
+        img.nav_inactive.private-img(src="/img/requests.png")
+        span.nav_text Заявки
+    .nav_item
+      a(href="/cabinet/tarifs")
+        img.nav_active.private-img(src="/img/pricea.gif")
+        img.nav_inactive.private-img(src="/img/price.gif")
+        span.nav_text Тарифы
+  else    
+    .nav_item
+      a(href="/cabinet/requests")
+        img.nav_active.private-img(src="/img/requestsa.png")
+        img.nav_inactive.private-img(src="/img/requests.png")
+        span.nav_text Мои заявки
