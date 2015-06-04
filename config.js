@@ -1,6 +1,6 @@
 var winston = require('winston');
 exports.DB = {
-    uri:mongodb://sparkDB:qwerty123456789@ds043002.mongolab.com:43002/spark,
+    uri:"mongodb://sparkDB:qwerty123456789@ds043002.mongolab.com:43002/spark",
     reconnect:3000
 }
 exports.logger = {
