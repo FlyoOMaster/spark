@@ -11,9 +11,9 @@ html
     link(rel="stylesheet", type="text/css", href="/modules/mod_ariimageslider/mod_ariimageslider/js/themes/nivo-slider.css")
     link(rel="stylesheet", type="text/css", href="/modules/mod_ariimageslider/mod_ariimageslider/js/themes/default/style.css")
     block css
-      style #ais_89_wrapper,#ais_89{width:680px;height:200px;} 
-    //-var name = user.name || user.login  
-    body 
+      style #ais_89_wrapper,#ais_89{width:680px;height:200px;}
+    //-var name = user.name || user.login
+    body
       .page
         .header
           span.logo
@@ -33,7 +33,7 @@ html
               a(href="/auth") Авторизироваться
             else
               img(src="/img/user.png")
-              -var name = user.name || user.login              
+              -var name = user.name || user.login
               a(href="#").menuHeader #{name}
               #menu
                 span.menuItem
@@ -48,7 +48,7 @@ html
         //-Боковая панель
         .nav
           block navbar
-            if user 
+            if user
               if user.type != 'admin'
                 .nav_item
                   a(href="/cabinet/requests/new")
@@ -91,7 +91,7 @@ html
                   span.nav_text
                     | Контактная
                     br
-                    | информация 
+                    | информация
             else
               .nav_item
                 a(href="/news")
@@ -130,25 +130,25 @@ html
                   span.nav_text
                     | Контактная
                     br
-                    | информация 
-                   
-      block content        
+                    | информация
+
+      block content
       .clear
       .footer
         p(style='text-align: center; margin-left: 300px; color: darkgray;').
-          ©Филиал ЗАО «Компания ТрансТелеКом» «Макрорегион СПАРК», 2010—2015    
-    script(type="application/javascript", src="/media/jui/js/jquery-2.1.4.min.js")    
-    script(type="application/javascript", src="/js/common.js") 
+          ©Филиал ЗАО «Компания ТрансТелеКом» «Макрорегион СПАРК», 2010—2015
+    script(type="application/javascript", src="/media/jui/js/jquery-2.1.4.min.js")
+    script(type="application/javascript", src="/js/common.js")
     script(type="application/javascript").
       var menu = $('#menu');
-      $('html').click(function(e) {  
-        var target = jQuery(e.target); 
-        
+      $('html').click(function(e) {
+        var target = jQuery(e.target);
+
         if(!target.hasClass('menuHeader') )
         {
-          menu.css('visibility', 'collapse');              
+          menu.css('visibility', 'collapse');
         }
-      }); 
+      });
       $('.menuHeader').click(function(){
         if (menu.css('visibility') == 'visible'){
           menu.css('visibility', 'collapse');
