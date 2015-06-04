@@ -1,5 +1,5 @@
 extends layout
-block js  
+block js
     script(type="application/javascript", src="media/jui/js/jquery-noconflict.js")
     script(type="application/javascript", src="media/jui/js/jquery-migrate.min.js")
     script(type="application/javascript", src="media/system/js/caption.js")
@@ -8,7 +8,7 @@ block js
       jQuery(window).on('load',  function() {
               new JCaption('img.caption');
             });
-      jQuery(window).load(function() { var $ = window.jQueryNivoSlider || jQuery; var opts = {"pauseTime":2000,"keyboardNav":false,"pauseOnHover":false,"disableClick":true,"directionNav":false,"directionNavHide":false}; $("#ais_89").nivoSlider(opts); });     
+      jQuery(window).load(function() { var $ = window.jQueryNivoSlider || jQuery; var opts = {"pauseTime":2000,"keyboardNav":false,"pauseOnHover":false,"disableClick":true,"directionNav":false,"directionNavHide":false}; $("#ais_89").nivoSlider(opts); });
 block content
   .content
     #ais_89_wrapper.ari-image-slider-wrapper.ari-is-theme-default.ari-image-slider-wCtrlNav
